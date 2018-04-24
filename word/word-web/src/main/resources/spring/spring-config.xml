@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:cache="http://www.springframework.org/schema/cache" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/aop 
+  		http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+  		http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd 
+        http://www.springframework.org/schema/cache 
+        http://www.springframework.org/schema/cache/spring-cache-4.3.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-4.3.xsd
+        ">
+        
+	<!-- 扫描注解 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath:properties/*.properties" />
+    
+    <!-- service注解扫描 -->
+	<context:component-scan base-package="com.paier.word.*">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+	<!-- 引入SPRING配置文件  -->
+	<!-- <import resource="classpath:spring/spring-shiro.xml"/>
+	<import resource="classpath:spring/spring-aop.xml"/>
+	<import resource="classpath:spring/spring-task.xml"/>-->
+	<import resource="classpath:spring/spring-druid.xml"/>
+	<import resource="classpath:spring/spring-redis.xml"/>
+
+</beans>
