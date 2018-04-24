@@ -6,6 +6,7 @@
     <groupId>com.paier</groupId>
     <artifactId>word</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../word/pom.xml</relativePath>
   </parent>
   <artifactId>word-core</artifactId>
   <name>word-base</name>
